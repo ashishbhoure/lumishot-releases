@@ -1,0 +1,470 @@
+:root {
+  --frost: #e8ebf4;
+  --ink: #161937;
+  --ink-soft: #4a4f73;
+  --indigo: #6366f1;
+  --rose: #ec4899;
+  --paper: #ffffff;
+  --dim: rgb(15 17 40 / 0.62);
+  --display: 'Bricolage Grotesque', 'Segoe UI Variable Display', system-ui, sans-serif;
+  --body: 'Instrument Sans', 'Segoe UI Variable Text', system-ui, sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 34rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--frost);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--indigo);
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--gutter);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font: 700 1.25rem var(--display);
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.85em 1.4em;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 600 1rem var(--body);
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgb(22 25 55 / 0.25);
+  transition:
+    transform 120ms ease,
+    background 120ms ease;
+}
+
+.button:hover {
+  background: #262a55;
+  transform: translateY(-1px);
+}
+
+.button-small {
+  padding: 0.55em 1em;
+  font-size: 0.9rem;
+}
+
+/* ---------- Hero: the moment of capture ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(24px, 6vw, 72px) var(--gutter) clamp(48px, 8vw, 104px);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+  font-weight: 800;
+  line-height: 1.02;
+  max-width: 12ch;
+}
+
+.lede {
+  max-width: var(--measure);
+  margin: 1.4rem 0 2rem;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+}
+
+.cta-note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.stage {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 11;
+  border-radius: 20px;
+  overflow: hidden;
+  /* A bright wallpaper, so the dimmed area outside the selection reads as dimmed. */
+  background:
+    radial-gradient(circle at 18% 22%, #c7d2fe 0, transparent 45%),
+    radial-gradient(circle at 85% 80%, #fbcfe8 0, transparent 50%),
+    linear-gradient(135deg, #a5b4fc, #f0abfc 55%, #f9a8d4);
+  box-shadow: 0 30px 60px -30px rgb(22 25 55 / 0.55);
+}
+
+/* The desktop behind the frozen screen. */
+.desk {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.window {
+  width: 62%;
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.35);
+  overflow: hidden;
+}
+
+.window-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #f1f2f8;
+}
+
+.window-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d5d8e6;
+}
+
+.window-body {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.line {
+  height: 9px;
+  border-radius: 5px;
+  background: #e2e5f0;
+}
+
+.w80 {
+  width: 80%;
+}
+.w70 {
+  width: 70%;
+}
+.w60 {
+  width: 60%;
+  background: #c9ccf9;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  padding: 8px 0;
+}
+
+.chart b {
+  flex: 1;
+  height: var(--h);
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(var(--indigo), var(--rose));
+}
+
+/* Everything outside the selection is dimmed, exactly like Lumishot's overlay. */
+.selection {
+  position: absolute;
+  left: 15%;
+  top: 17%;
+  width: 70%;
+  height: 66%;
+  box-shadow: 0 0 0 999px var(--dim);
+  outline: 1px solid rgb(255 255 255 / 0.9);
+  animation: select 900ms cubic-bezier(0.2, 0.7, 0.1, 1) 250ms both;
+}
+
+.size {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 0.75);
+  color: #fff;
+  font: 500 0.8rem var(--body);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Crop marks, the same as on Lumishot's icon. */
+.corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 0 solid #fff;
+}
+.nw {
+  left: -4px;
+  top: -4px;
+  border-width: 4px 0 0 4px;
+}
+.ne {
+  right: -4px;
+  top: -4px;
+  border-width: 4px 4px 0 0;
+}
+.sw {
+  left: -4px;
+  bottom: -4px;
+  border-width: 0 0 4px 4px;
+}
+.se {
+  right: -4px;
+  bottom: -4px;
+  border-width: 0 4px 4px 0;
+}
+
+.hint {
+  position: absolute;
+  left: 50%;
+  top: 4.5%;
+  translate: -50% 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.75);
+  color: #fff;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+@keyframes select {
+  from {
+    width: 0;
+    height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selection {
+    animation: none;
+  }
+  .button {
+    transition: none;
+  }
+}
+
+/* ---------- What it does ---------- */
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(56px, 9vw, 112px);
+}
+
+/* Each group framed by crop marks rather than boxed in a card. */
+.group {
+  position: relative;
+  padding: 28px 26px 8px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) top left / 18px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top left / 2px 18px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top right / 18px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) top right / 2px 18px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom left / 18px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom left / 2px 18px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom right / 18px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) bottom right / 2px 18px no-repeat;
+}
+
+.group h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.group ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group li {
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+}
+
+.group strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Shortcuts ---------- */
+
+.keys {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(56px, 9vw, 112px);
+}
+
+.keys h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.keys table {
+  border-collapse: collapse;
+}
+
+.keys td {
+  padding: 8px 28px 8px 0;
+}
+
+/* A shortcut's keys stay together on one line. */
+.keys td:first-child {
+  white-space: nowrap;
+}
+
+.keys td:last-child {
+  color: var(--ink-soft);
+}
+
+kbd {
+  display: inline-block;
+  min-width: 2.1em;
+  margin-right: 5px;
+  padding: 3px 9px;
+  border-radius: 7px;
+  background: var(--paper);
+  box-shadow:
+    inset 0 -2px 0 #d6d9e6,
+    0 1px 2px rgb(22 25 55 / 0.12);
+  color: var(--ink);
+  font: 600 0.85rem var(--body);
+  text-align: center;
+}
+
+.keys-note {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Download ---------- */
+
+.download {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(40px, 7vw, 80px);
+}
+
+/* The rule lines up with the text, not the page edge. */
+.download::before {
+  content: '';
+  display: block;
+  margin-bottom: clamp(40px, 7vw, 80px);
+  border-top: 2px solid var(--ink);
+}
+
+.download h2 {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, var(--measure)));
+  gap: 8px 40px;
+  margin-top: 32px;
+  color: var(--ink-soft);
+}
+
+.notes strong {
+  color: var(--ink);
+}
+
+.notes p {
+  margin: 0 0 12px;
+}
+
+.foot {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px var(--gutter) 40px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .groups {
+    grid-template-columns: 1fr;
+  }
+  .notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar .button-small {
+    display: none;
+  }
+  /* On a phone the hint moves below the selection, clear of its size label. */
+  .hint {
+    top: auto;
+    bottom: 2.5%;
+    font-size: 0.72rem;
+  }
+  .keys td {
+    padding-right: 16px;
+  }
+}

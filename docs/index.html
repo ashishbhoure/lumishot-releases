@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumishot: screenshots and screen recordings for Windows</title>
+    <meta
+      name="description"
+      content="Capture any part of your screen, make it look good, and share it in seconds. Screenshots, recordings with auto-zoom, scrolling capture and copy-text-from-screen, for Windows 10 and 11. Free."
+    />
+    <meta property="og:title" content="Lumishot for Windows" />
+    <meta
+      property="og:description"
+      content="Screenshots and screen recordings that look good enough to post."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <a class="brand" href="#">
+        <img src="icon.svg" alt="" width="32" height="32" />
+        Lumishot
+      </a>
+      <a class="button button-small" href="#download">Download for Windows</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Screenshots for Windows that look good enough to post.</h1>
+          <p class="lede">
+            Press a key, drag over anything on your screen, and it lands on a clean background with
+            rounded corners and a shadow, ready to paste into Slack, GitHub or a doc.
+          </p>
+          <div class="cta">
+            <a
+              class="button"
+              href="https://github.com/ashishbhoure/lumishot-releases/releases/latest/download/Lumishot-Setup.exe"
+            >
+              Download for Windows
+            </a>
+            <p class="cta-note">Free. Windows 10 and 11, 64-bit.</p>
+          </div>
+        </div>
+
+        <!-- The moment of capture: a frozen, dimmed desktop with one bright selection. -->
+        <figure class="stage" aria-label="A screen region being selected, with its size shown">
+          <div class="desk" aria-hidden="true">
+            <div class="window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="window-body">
+                <span class="line w80"></span>
+                <span class="line w60"></span>
+                <span class="chart">
+                  <b style="--h: 40%"></b><b style="--h: 65%"></b><b style="--h: 52%"></b
+                  ><b style="--h: 88%"></b><b style="--h: 70%"></b>
+                </span>
+                <span class="line w70"></span>
+              </div>
+            </div>
+          </div>
+          <div class="selection">
+            <span class="size">1280 × 720</span>
+            <span class="corner nw"></span><span class="corner ne"></span>
+            <span class="corner sw"></span><span class="corner se"></span>
+          </div>
+          <figcaption class="hint">Drag to capture · Esc cancels</figcaption>
+        </figure>
+      </section>
+
+      <section class="groups" aria-label="What Lumishot does">
+        <article class="group">
+          <h2>Capture</h2>
+          <ul>
+            <li>
+              <strong>Any region, on any screen.</strong> The screen freezes so menus and tooltips
+              stay put while you drag.
+            </li>
+            <li>
+              <strong>Scrolling capture.</strong> A whole web page or chat in one tall image,
+              scrolling down or up, with sticky headers kept once.
+            </li>
+            <li>
+              <strong>Copy text from the screen.</strong> Drag over an error message, a video or a
+              scanned PDF and the text is on your clipboard. Works offline.
+            </li>
+            <li><strong>Timer.</strong> Three, five or ten seconds to open a menu first.</li>
+          </ul>
+        </article>
+        <article class="group">
+          <h2>Record</h2>
+          <ul>
+            <li>
+              <strong>Region or full screen</strong>, with computer sound and your microphone.
+            </li>
+            <li>
+              <strong>Auto-zoom.</strong> The video glides in towards each click, so a demo looks
+              edited without editing.
+            </li>
+            <li>
+              <strong>Blur and spotlight.</strong> Hide a password or an email, or dim everything
+              but one area.
+            </li>
+            <li>
+              <strong>Webcam bubble, trim and GIF.</strong> Keep the part that matters and share it
+              as MP4 or GIF.
+            </li>
+          </ul>
+        </article>
+        <article class="group">
+          <h2>Share</h2>
+          <ul>
+            <li>
+              <strong>A thumbnail after every capture.</strong> Copy, save, edit, or drag it
+              straight into a chat.
+            </li>
+            <li>
+              <strong>Mark it up.</strong> Arrows, boxes, highlights, text, and pixelate for
+              anything private.
+            </li>
+            <li>
+              <strong>Pin it.</strong> Keep a screenshot floating over your other windows while you
+              work.
+            </li>
+            <li>
+              <strong>Recent captures.</strong> The last fifty, even the ones you only copied.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="keys" aria-labelledby="keys-title">
+        <h2 id="keys-title">Everything is one shortcut away</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td><kbd>Alt</kbd><kbd>Shift</kbd><kbd>S</kbd></td>
+              <td>Capture a region</td>
+            </tr>
+            <tr>
+              <td><kbd>Alt</kbd><kbd>Shift</kbd><kbd>F</kbd></td>
+              <td>Capture the full screen</td>
+            </tr>
+            <tr>
+              <td><kbd>Alt</kbd><kbd>Shift</kbd><kbd>R</kbd></td>
+              <td>Start or stop recording</td>
+            </tr>
+            <tr>
+              <td><kbd>Alt</kbd><kbd>Shift</kbd><kbd>L</kbd></td>
+              <td>Scrolling capture</td>
+            </tr>
+            <tr>
+              <td><kbd>Alt</kbd><kbd>Shift</kbd><kbd>T</kbd></td>
+              <td>Copy text from the screen</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="keys-note">Change any of them in Settings.</p>
+      </section>
+
+      <section class="download" id="download" aria-labelledby="download-title">
+        <h2 id="download-title">Get Lumishot</h2>
+        <a
+          class="button"
+          href="https://github.com/ashishbhoure/lumishot-releases/releases/latest/download/Lumishot-Setup.exe"
+        >
+          Download for Windows
+        </a>
+        <div class="notes">
+          <p>
+            <strong>If Windows says it protected your PC,</strong> choose <em>More info</em>, then
+            <em>Run anyway</em>. Lumishot is new and not code-signed yet, so Windows does not know
+            it yet.
+          </p>
+          <p>
+            <strong>Your captures stay on your PC.</strong> No account, nothing uploaded, and text
+            recognition runs offline. Lumishot only goes online to check for updates, which install
+            themselves when you quit.
+          </p>
+          <p>
+            <a href="https://github.com/ashishbhoure/lumishot-releases/releases">Release notes</a>
+            and
+            <a href="https://github.com/ashishbhoure/lumishot-releases/issues/new"
+              >report a problem</a
+            >
+            on GitHub.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>Lumishot, made by Ashish Bhoure.</p>
+    </footer>
+  </body>
+</html>
