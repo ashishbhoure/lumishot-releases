@@ -295,6 +295,44 @@ h2 {
   }
 }
 
+/* ---------- What it looks like ---------- */
+
+.show {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(64px, 10vw, 128px);
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  /* A faint edge, so a light screenshot does not melt into the light page. */
+  outline: 1px solid rgb(22 25 55 / 0.1);
+  box-shadow: 0 24px 48px -28px rgb(22 25 55 / 0.55);
+}
+
+.shot figcaption {
+  max-width: var(--measure);
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.shot figcaption strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* ---------- What it does ---------- */
 
 .groups {
@@ -446,7 +484,8 @@ kbd {
   .hero {
     grid-template-columns: 1fr;
   }
-  .groups {
+  .groups,
+  .show {
     grid-template-columns: 1fr;
   }
   .notes {
