@@ -311,6 +311,12 @@ h2 {
   margin: 0;
 }
 
+/* The recording runs down the left, beside the two screenshots. */
+.shot-wide {
+  grid-row: span 2;
+  align-self: center;
+}
+
 .shot img {
   display: block;
   width: 100%;
@@ -487,6 +493,9 @@ kbd {
   .groups,
   .show {
     grid-template-columns: 1fr;
+  }
+  .shot-wide {
+    grid-row: auto;
   }
   .notes {
     grid-template-columns: 1fr;
